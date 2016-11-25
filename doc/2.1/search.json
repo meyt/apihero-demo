@@ -1,0 +1,40 @@
+{
+  "title": "Returns all sites in the network.",
+  "resource": "/search",
+  "method": "get",
+  "params": [
+    {
+      "name": "page",
+      "title": "Page",
+      "type": "integer",
+      "description": "Page number",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "name": "tagged",
+      "title": "Tagged",
+      "type": "string",
+      "description": "Keywords",
+      "optional": false,
+      "default": ""
+    },
+    {
+      "name": "pagesize",
+      "title": "Page Size",
+      "type": "integer",
+      "description": "Page Size",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "name": "site",
+      "title": "Site",
+      "type": "string",
+      "type_view": "dropdown",
+      "items": {"superuser": "SuperUser", "stackoverflow": "Stackoverflow"},
+      "default": "stackoverflow"
+    }
+
+  ]
+}

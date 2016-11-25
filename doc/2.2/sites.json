@@ -1,0 +1,24 @@
+{
+  "title": "Returns all sites in the network.",
+  "resource": "/sites",
+  "method": "get",
+  "params": [
+    {
+      "name": "page",
+      "title": "Page",
+      "type": "integer",
+      "description": "Page number",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "name": "pagesize",
+      "title": "Page Size",
+      "type": "integer",
+      "description": "Page Size",
+      "optional": true,
+      "default": ""
+    }
+
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "StackExchange API",
+  "template": "bootstrap-material",
+  "author": "Mahdi Ghanea.g",
+  "date": "2016-11-25",
+  "test_units": {
+    "1. Production": "https://api.stackexchange.com/:version",
+    "2. Localhost Test": "http://localhost/stackoverflow/api/:version"
+  }
+}

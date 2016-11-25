@@ -1,0 +1,418 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>StackExchange API - Returns all sites in the network.</title>
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="../assets/css/style.css" rel="stylesheet" >
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-10">
+			<nav class="navbar navbar-top" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex5-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">
+						StackExchange API
+					</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					
+    <ul class="breadcrumb list-inline">
+        <li><a href="./index.html">2.1</a></li>
+        <li>/search</li>
+    </ul>
+
+				</ul>
+
+			</nav>
+		</div>
+	</div>
+	<!-- top toolbar  -->
+
+
+	<div class="row">
+        
+
+
+
+
+
+
+
+
+
+<div class="col-lg-1">&nbsp;</div>
+<div class="col-lg-7">
+    <h1>Returns all sites in the network.</h1>
+
+    <p><span class="label label-primary">GET</span> <span class="label label-default">/search</span></p>
+
+    <p>Searches a site for any questions which fit the given criteria.</p>
+<p>This method is intentionally quite limited. For more general searching, you should use a proper internet search engine restricted to the domain of the site in question.</p>
+<p>At least one of <code>tagged</code> or <code>intitle</code> must be set on this method. <code>nottagged</code> is only used if <code>tagged</code> is also set, for performance reasons.</p>
+<p><code>tagged</code> and <code>nottagged</code> are semi-colon delimited list of tags. At least 1 tag in <code>tagged</code> will be on each returned question if it is passed, making it the OR equivalent of the AND version of <code>tagged</code> on <a href="/docs/questions">/questions</a>.</p>
+<p>The sorts accepted by this method operate on the follow fields of the <a href="/docs/types/question">question object</a>:</p>
+<ul>
+<li><strong>activity</strong> – <code>last_activity_date</code></li>
+<li><strong>creation</strong> – <code>creation_date</code></li>
+<li><strong>votes</strong> – <code>score</code></li>
+<li><strong>relevance</strong> – matches the relevance tab on the site itself<ul>
+<li>Does not accept <code>min</code> or <code>max</code></li>
+</ul>
+</li>
+</ul>
+<p><code>activity</code> is the default sort.
+It is possible to <a href="/docs/min-max">create moderately complex queries</a> using <code>sort</code>, <code>min</code>, <code>max</code>, <code>fromdate</code>, and <code>todate</code>.</p>
+<p>This method returns a list of <a href="/docs/types/question">questions</a>.</p>
+
+
+        <h4>Parameters</h4>
+        <table class="table">
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Optional</th>
+                <th>Default</th>
+                <th>Values</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td><code>page</code></td>
+                    <td>
+                            Page number
+                    </td>
+                    <td>
+                            <span class="label label-success">True</span>
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td style="width: 220px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>tagged</code></td>
+                    <td>
+                            Keywords
+                    </td>
+                    <td>
+                            <span class="label label-danger">False</span>
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td style="width: 220px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>pagesize</code></td>
+                    <td>
+                            Page Size
+                    </td>
+                    <td>
+                            <span class="label label-success">True</span>
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td style="width: 220px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>site</code></td>
+                    <td>
+                    </td>
+                    <td>
+                            <span class="label label-danger">False</span>
+                    </td>
+                    <td>
+                            stackoverflow
+                    </td>
+                    <td style="width: 220px;">
+                                <span class="label label-primary ">stackoverflow: Stackoverflow</span>
+                                <span class="label label-primary ">superuser: SuperUser</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+    <h2>Try It</h2>
+
+    <div class="panel-group" id="accordion">
+        
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#49b936cb871f36308bab4d8df6d17138">
+                        1. Production <small><i class="unit-url-replace" data-url="https://api.stackexchange.com/2.1/search" >https://api.stackexchange.com/2.1/search</i></small></a>
+                    </h4>
+                </div>
+                <div id="49b936cb871f36308bab4d8df6d17138" class="panel-collapse collapse  in ">
+                    <form class="testunit"
+                              action="https://api.stackexchange.com/2.1/search"
+                              src-action="https://api.stackexchange.com/2.1/search"
+                              method="get" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <!--BEGIN::panel-body-->
+                                    <div class="row">
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page</label>
+                                                        <input type="number"
+                                                               name="page"
+                                                               value=""
+                                                               placeholder="page"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Tagged</label>
+                                                        <input type="text"
+                                                               name="tagged"
+                                                               value=""
+                                                               placeholder="tagged"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page Size</label>
+                                                        <input type="number"
+                                                               name="pagesize"
+                                                               value=""
+                                                               placeholder="pagesize"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Site</label>
+                                                        <select name="site" class="form-control">
+                                                                <option value="superuser"
+                                                                >
+                                                                SuperUser</option>
+                                                                <option value="stackoverflow"
+                                                                     SELECTED
+                                                                >
+                                                                Stackoverflow</option>
+                                                        </select>
+                                                    </div>
+
+                                    </div>
+                            <!--END::panel-body-->
+                        </div>
+
+                        <div class="panel-footer">
+                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#e4d85868535a46d946f3f3aca26c0d8d">
+                        2. Localhost Test <small><i class="unit-url-replace" data-url="http://localhost/stackoverflow/api/2.1/search" >http://localhost/stackoverflow/api/2.1/search</i></small></a>
+                    </h4>
+                </div>
+                <div id="e4d85868535a46d946f3f3aca26c0d8d" class="panel-collapse collapse ">
+                    <form class="testunit"
+                              action="http://localhost/stackoverflow/api/2.1/search"
+                              src-action="http://localhost/stackoverflow/api/2.1/search"
+                              method="get" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <!--BEGIN::panel-body-->
+                                    <div class="row">
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page</label>
+                                                        <input type="number"
+                                                               name="page"
+                                                               value=""
+                                                               placeholder="page"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Tagged</label>
+                                                        <input type="text"
+                                                               name="tagged"
+                                                               value=""
+                                                               placeholder="tagged"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page Size</label>
+                                                        <input type="number"
+                                                               name="pagesize"
+                                                               value=""
+                                                               placeholder="pagesize"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Site</label>
+                                                        <select name="site" class="form-control">
+                                                                <option value="superuser"
+                                                                >
+                                                                SuperUser</option>
+                                                                <option value="stackoverflow"
+                                                                     SELECTED
+                                                                >
+                                                                Stackoverflow</option>
+                                                        </select>
+                                                    </div>
+
+                                    </div>
+                            <!--END::panel-body-->
+                        </div>
+
+                        <div class="panel-footer">
+                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    </div>
+
+
+
+</div>
+<!-- col-7 -->
+
+
+<div class="col-lg-3">
+    <!-- RESERVED SIDEBAR -->
+    <div class="panel-group panel-sidebar" id="accordion2">
+                
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#08207d752d8a566368d1fd97b6142fa3">
+                            2.1</a>
+                            <a href="../2.1/index.html"><small>INDEX</small></a>
+                        </h4>
+                    </div>
+                    <div id="08207d752d8a566368d1fd97b6142fa3" class="panel-collapse collapse  in ">
+                        <ul class="list-group">
+                            
+                            <a class="list-group-item  active " href="./search.html">
+                                <small class="method">GET</small>
+                                /search</a>
+                            
+                            <a class="list-group-item " href="./users.html">
+                                <small class="method">GET</small>
+                                /users</a>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#1718d57986110b6af2dd96b59d3db416">
+                            2.2</a>
+                            <a href="../2.2/index.html"><small>INDEX</small></a>
+                        </h4>
+                    </div>
+                    <div id="1718d57986110b6af2dd96b59d3db416" class="panel-collapse collapse ">
+                        <ul class="list-group">
+                            
+                            <a class="list-group-item  active " href="./search.html">
+                                <small class="method">GET</small>
+                                /search</a>
+                            
+                            <a class="list-group-item " href="./sites.html">
+                                <small class="method">GET</small>
+                                /sites</a>
+                            
+                            <a class="list-group-item " href="./users.html">
+                                <small class="method">GET</small>
+                                /users</a>
+                        </ul>
+                    </div>
+                </div>
+    </div>
+</div>
+
+
+
+
+		<div class="col-lg-offset-1 col-lg-10" id="footer">
+			Generated by <a href="https://github.com/meyt/apihero">APIHero</a>
+		</div>
+	</div>
+
+</body>
+
+</html>

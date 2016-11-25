@@ -1,0 +1,40 @@
+{
+  "title": "Returns all users on a site",
+  "resource": "/users",
+  "method": "get",
+  "params": [
+    {
+      "name": "page",
+      "title": "Page",
+      "type": "integer",
+      "description": "Page number",
+      "optional": true,
+      "default": ""
+    },
+    {
+      "name": "order",
+      "title": "Order",
+      "type": "string",
+      "type_view": "dropdown",
+      "items": {"asc": "Ascending", "desc": "Descending"},
+      "default": "desc",
+      "optional": true
+    },
+    {
+      "name": "sort",
+      "title": "Sort",
+      "type": "string",
+      "type_view": "dropdown",
+      "items": {"reputation": "Reputation", "creation": "Creation","name":"Name", "modified":"Modified"},
+      "optional": true
+    },
+    {
+      "name": "site",
+      "title": "Site",
+      "type": "string",
+      "type_view": "dropdown",
+      "items": {"superuser": "SuperUser", "stackoverflow": "Stackoverflow"},
+      "default": "stackoverflow"
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>StackExchange API - Returns all sites in the network.</title>
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet" >
+    <link href="../assets/css/style.css" rel="stylesheet" >
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/bootstrap.min.js"></script>
+	<script src="../assets/js/script.js"></script>
+</head>
+
+<body>
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-10">
+			<nav class="navbar navbar-top" role="navigation">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex5-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="../index.html">
+						StackExchange API
+					</a>
+				</div>
+
+				<ul class="nav navbar-nav">
+					
+    <ul class="breadcrumb list-inline">
+        <li><a href="./index.html">2.2</a></li>
+        <li>/sites</li>
+    </ul>
+
+				</ul>
+
+			</nav>
+		</div>
+	</div>
+	<!-- top toolbar  -->
+
+
+	<div class="row">
+        
+
+
+
+
+
+
+
+
+
+<div class="col-lg-1">&nbsp;</div>
+<div class="col-lg-7">
+    <h1>Returns all sites in the network.</h1>
+
+    <p><span class="label label-primary">GET</span> <span class="label label-default">/sites</span></p>
+
+    <p>Returns all sites in the network.</p>
+<p>This method allows for discovery of new sites, and changes to existing ones. Be aware that unlike normal API methods, this method should be fetched very infrequently, it is very unusual for these values to change more than once on any given day. It is suggested that you cache its return for at least one day, unless your app encounters evidence that it has changed (such as from the <a href="/docs/info">/info method</a>).</p>
+<p>The <code>pagesize</code> parameter for this method is unbounded, in acknowledgement that for many applications repeatedly fetching from <code>/sites</code> would complicate start-up tasks needlessly.</p>
+<p>This method returns a list of <a href="/docs/types/site">sites</a>.</p>
+
+
+        <h4>Parameters</h4>
+        <table class="table">
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Optional</th>
+                <th>Default</th>
+                <th>Values</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td><code>page</code></td>
+                    <td>
+                            Page number
+                    </td>
+                    <td>
+                            <span class="label label-success">True</span>
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td style="width: 220px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>pagesize</code></td>
+                    <td>
+                            Page Size
+                    </td>
+                    <td>
+                            <span class="label label-success">True</span>
+                    </td>
+                    <td>
+                            
+                    </td>
+                    <td style="width: 220px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+    <h2>Try It</h2>
+
+    <div class="panel-group" id="accordion">
+        
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#49b936cb871f36308bab4d8df6d17138">
+                        1. Production <small><i class="unit-url-replace" data-url="https://api.stackexchange.com/2.2/sites" >https://api.stackexchange.com/2.2/sites</i></small></a>
+                    </h4>
+                </div>
+                <div id="49b936cb871f36308bab4d8df6d17138" class="panel-collapse collapse  in ">
+                    <form class="testunit"
+                              action="https://api.stackexchange.com/2.2/sites"
+                              src-action="https://api.stackexchange.com/2.2/sites"
+                              method="get" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <!--BEGIN::panel-body-->
+                                    <div class="row">
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page</label>
+                                                        <input type="number"
+                                                               name="page"
+                                                               value=""
+                                                               placeholder="page"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page Size</label>
+                                                        <input type="number"
+                                                               name="pagesize"
+                                                               value=""
+                                                               placeholder="pagesize"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                    </div>
+                            <!--END::panel-body-->
+                        </div>
+
+                        <div class="panel-footer">
+                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#e4d85868535a46d946f3f3aca26c0d8d">
+                        2. Localhost Test <small><i class="unit-url-replace" data-url="http://localhost/stackoverflow/api/2.2/sites" >http://localhost/stackoverflow/api/2.2/sites</i></small></a>
+                    </h4>
+                </div>
+                <div id="e4d85868535a46d946f3f3aca26c0d8d" class="panel-collapse collapse ">
+                    <form class="testunit"
+                              action="http://localhost/stackoverflow/api/2.2/sites"
+                              src-action="http://localhost/stackoverflow/api/2.2/sites"
+                              method="get" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <!--BEGIN::panel-body-->
+                                    <div class="row">
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page</label>
+                                                        <input type="number"
+                                                               name="page"
+                                                               value=""
+                                                               placeholder="page"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                            
+
+
+
+                                                    <div class="col-lg-4 form-group">
+                                                        <label>Page Size</label>
+                                                        <input type="number"
+                                                               name="pagesize"
+                                                               value=""
+                                                               placeholder="pagesize"
+                                                               class="form-control" />
+                                                    </div>
+
+
+
+
+                                    </div>
+                            <!--END::panel-body-->
+                        </div>
+
+                        <div class="panel-footer">
+                            <input type="submit" value="Submit" class="btn btn-primary"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+    </div>
+
+
+
+</div>
+<!-- col-7 -->
+
+
+<div class="col-lg-3">
+    <!-- RESERVED SIDEBAR -->
+    <div class="panel-group panel-sidebar" id="accordion2">
+                
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#08207d752d8a566368d1fd97b6142fa3">
+                            2.1</a>
+                            <a href="../2.1/index.html"><small>INDEX</small></a>
+                        </h4>
+                    </div>
+                    <div id="08207d752d8a566368d1fd97b6142fa3" class="panel-collapse collapse ">
+                        <ul class="list-group">
+                            
+                            <a class="list-group-item " href="./search.html">
+                                <small class="method">GET</small>
+                                /search</a>
+                            
+                            <a class="list-group-item " href="./users.html">
+                                <small class="method">GET</small>
+                                /users</a>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2" href="#1718d57986110b6af2dd96b59d3db416">
+                            2.2</a>
+                            <a href="../2.2/index.html"><small>INDEX</small></a>
+                        </h4>
+                    </div>
+                    <div id="1718d57986110b6af2dd96b59d3db416" class="panel-collapse collapse  in ">
+                        <ul class="list-group">
+                            
+                            <a class="list-group-item " href="./search.html">
+                                <small class="method">GET</small>
+                                /search</a>
+                            
+                            <a class="list-group-item  active " href="./sites.html">
+                                <small class="method">GET</small>
+                                /sites</a>
+                            
+                            <a class="list-group-item " href="./users.html">
+                                <small class="method">GET</small>
+                                /users</a>
+                        </ul>
+                    </div>
+                </div>
+    </div>
+</div>
+
+
+
+
+		<div class="col-lg-offset-1 col-lg-10" id="footer">
+			Generated by <a href="https://github.com/meyt/apihero">APIHero</a>
+		</div>
+	</div>
+
+</body>
+
+</html>
